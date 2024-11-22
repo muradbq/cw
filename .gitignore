@@ -1,0 +1,25 @@
+# Compiled source code
+*.class
+*.o
+*.exe
+
+# Temporary files
+*.swp
+*.swo
+*.log
+
+# Sensitive information
+.venv/
+.env
+*.pem
+
+# Build artifacts
+target/
+dist/
+*.jar
+*.war
+
+# IDE-specific files
+.idea/
+.vscode/
+.DS_Store

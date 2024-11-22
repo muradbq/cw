@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "cw"
+version = "0.1.0"
+description = ""
+authors = ["Murad.H <devoopsdb@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.13,<3.14"
+flet = "^0.24.1"
+pillow = "^11.0.0"
+pyinstaller = "^6.11.1"
+openpyxl = "^3.1.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

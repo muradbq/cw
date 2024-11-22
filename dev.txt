@@ -1,0 +1,131 @@
+cspell:disable
+
+Python 3.12.2
+py -m pip install * # (windows)
+python -m pip install # (linux)
+
+# Start project
+
+uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+
+python -m venv .venv
+py -3.12 -m venv .venv
+.venv\Scripts\activate.bat # (windows)
+source .venv/bin/activate # (linux)
+pip install package_name
+deactivate
+
+pip install poetry
+poetry config --list
+poetry config virtualenvs.in-project true
+poetry new fbs-erp
+cd fbs-erp
+
+poetry env use python3.12 // или указать путь до python.exe
+poetry shell
+
+poetry install
+poetry install --without test # (release)
+
+poetry add *
+poetry add Django
+poetry remove <имя_пакета>
+
+
+# Просмотр зависимостей
+poetry show --tree
+
+
+python -m pip freeze > requirements.txt
+python -m pip install -r requirements.txt
+
+# git
+git config --global user.name "Murad"
+git config --global user.email devoopsdb@gmail.com
+git init
+git add hello.txt
+git add -A
+git add .
+
+# Django commands{
+
+django-admin startproject app
+
+# start server
+python manage.py runserver 5000
+python manage.py startapp *name
+
+# migration
+
+python manage.py makemigrations
+python manage.py migrate
+pip uninstall simpletable
+
+# create superuser
+
+python manage.py createsuperuser
+
+
+}
+
+# staticfiles
+
+python manage.py collectstatic
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from PySide6.QtWidgets import QApplication, QLabel, QVBoxLayout, QWidget
+from PySide6.QtSvg import QSvgWidget
+import sys
+
+class MainWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        # Создаем QSvgWidget для отображения SVG
+        self.svg_widget = QSvgWidget("path/to/your/icon.svg")
+        
+        # Устанавливаем стиль для изменения цвета на белый
+        self.svg_widget.setStyleSheet("background-color: transparent; color: white;")
+
+        # Устанавливаем макет
+        layout = QVBoxLayout()
+        layout.addWidget(self.svg_widget)
+        self.setLayout(layout)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = MainWindow()
+    window.resize(200, 200)
+    window.show()
+    sys.exit(app.exec())
